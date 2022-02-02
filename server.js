@@ -24,6 +24,11 @@ app.engine(
 
 app.set("view engine", "hbs");
 
+app.use(express.static(path.join(__dirname, "/views")));
+
+app.get("/", (req, res) => {
+  res.render("task/home");
+});
 app.use("/task", taskController);
 app.use("/auth", authController);
 
