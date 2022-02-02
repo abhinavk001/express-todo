@@ -1,3 +1,4 @@
+require("./models/db.js");
 const express = require("express");
 const bodyparser = require("body-parser");
 const path = require("path");
@@ -5,8 +6,6 @@ const exphbs = require("express-handlebars");
 
 const taskController = require("./controllers/taskController");
 const authController = require("./controllers/authController");
-
-require("./models/db.js");
 
 var app = express();
 

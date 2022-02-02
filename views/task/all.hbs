@@ -1,0 +1,24 @@
+<h3>All Tasks</h3>
+<Table>
+  <thead>
+    <tr>
+      <th>Task Name</th>
+      <th>Task Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list}}
+      <tr>
+        <td>{{this.taskName}}</td>
+        <td>{{this.taskDesc}}</td>
+        <td>
+          <a href="/task/edit/{{this._id}}">Edit</a>
+          <a href="/task/delete/{{this._id}}">Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</Table>
+
+<a href="/task/create">Create a new task</a>
