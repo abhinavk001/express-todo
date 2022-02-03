@@ -2,12 +2,20 @@ const express = require("express");
 
 var router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Authentication");
+router.get("/login", (req, res) => {
+  res.render("auth/login");
 });
 
-router.post("/register", (req, res) => {
-  res.send("register");
+router.post("/login", (req, res) => {
+  res.json(req.body);
+});
+
+router.get("/signup", (req, res) => {
+  res.render("auth/signup");
+});
+
+router.post("/signup", (req, res) => {
+  res.json(req.body);
 });
 
 module.exports = router;
