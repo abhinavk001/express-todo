@@ -12,3 +12,4 @@ mongoose.connect(
 );
 
 require("./task.model");
+require("./user.model");
