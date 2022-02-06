@@ -5,7 +5,6 @@ const path = require("path");
 const exphbs = require("express-handlebars");
 
 const taskController = require("./controllers/taskController");
-const authController = require("./controllers/authController");
 
 var app = express();
 
@@ -30,7 +29,6 @@ app.get("/", (req, res) => {
   res.render("task/home");
 });
 app.use("/task", taskController);
-app.use("/auth", authController);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000.");

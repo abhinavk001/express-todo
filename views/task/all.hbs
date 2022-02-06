@@ -1,24 +1,42 @@
-<h3 class="text-3xl font-bold underline">All Tasks</h3>
-<Table>
-  <thead>
-    <tr>
-      <th>Task Name</th>
-      <th>Task Description</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each list}}
-      <tr>
-        <td>{{this.taskName}}</td>
-        <td>{{this.taskDesc}}</td>
-        <td>
-          <a href="/task/edit/{{this._id}}">Edit</a>
-          <a href="/task/delete/{{this._id}}">Delete</a>
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
-</Table>
-
-<a href="/task/create">Create a new task</a>
+<div class="container p-2 mx-auto sm:px-20 text-coolGray-800">
+  <h2 class="mb-4 text-2xl font-semibold leading-tight">All Tasks</h2>
+  <div class="overflow-x-auto">
+    <Table class="w-full p-6 text-base text-left whitespace-nowrap">
+      <thead>
+        <tr class="bg-coolGray-300">
+          <th class="p-3">Task Name</th>
+          <th class="p-3">Task Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="border-b bg-coolGray-50 border-coolGray-300">
+        {{#each list}}
+          <tr>
+            <td class="px-3 py-2">{{this.taskName}}</td>
+            <td class="px-3 py-2">{{this.taskDesc}}</td>
+            <td>
+              <a
+                href="/task/edit/{{this._id}}"
+                class="px-3 text-yellow-500"
+              >Edit</a>
+              <a
+                href="/task/delete/{{this._id}}"
+                class="px-3 text-red-600"
+              >Delete</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </Table>
+  </div>
+</div>
+<div class="flex align-center justify-center py-10">
+  <a
+    href="/task/create"
+    class="px-5 py-2 text-white bg-violet-600 mx-1 rounded-md"
+  >Create a new task</a>
+  <a
+    href="/task/logout"
+    class="px-5 py-2 text-white bg-red-600 mx-1 rounded-md"
+  >Logout</a>
+</div>

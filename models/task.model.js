@@ -7,6 +7,9 @@ var taskSchema = new mongoose.Schema({
   taskDesc: {
     type: String,
   },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
 });
 
 mongoose.model("Task", taskSchema);

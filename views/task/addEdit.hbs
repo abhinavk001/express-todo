@@ -1,18 +1,39 @@
-<h2>{{viewTitle}}</h2>
+<div class="container flex align-center justify-center p-10">
+  <div>
+    <h2 class="text-xl">{{viewTitle}}</h2>
+    <div class="py-10 bg-coolGray-100 text-coolGray-900">
+      <form action="{{route}}" autocomplete="off" method="{{method}}">
+        <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+          <div class="col-span-full">
+            <label class="text-sm" for="fname">Task name:</label><br />
+            <input
+              class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900"
+              type="text"
+              id="fname"
+              name="taskName"
+              value="{{taskName}}"
+            /><br />
+          </div>
+          <div class="col-span-full">
+            <label class="text-sm" for="lname">Task Description:</label><br />
+            <input
+              class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-600 border-coolGray-300 text-coolGray-900"
+              type="text"
+              id="lname"
+              name="taskDesc"
+              value="{{taskDesc}}"
+            /><br /><br />
+          </div>
 
-<form action="{{route}}" autocomplete="off" method="{{method}}">
-  <div class="form-group">
-    <label for="fname">Task name:</label><br />
-    <input type="text" id="fname" name="taskName" value="{{taskName}}" /><br />
+          <button
+            type="submit"
+            class="p-3 text-center rounded-sm text-coolGray-50 bg-violet-600"
+          >Submit</button>
+        </div>
+
+      </form>
+
+      <a href="/task/all" class="text-red-600">Cancel</a>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="lname">Task Description:</label><br />
-    <input type="text" id="lname" name="taskDesc" value="{{taskDesc}}" /><br
-    /><br />
-  </div>
-
-  <button type="submit" class="btn">Submit</button>
-
-</form>
-
-<a href="/task/all">Cancel</a>
+</div>
