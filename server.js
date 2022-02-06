@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 require("./models/db.js");
 const express = require("express");
 const bodyparser = require("body-parser");
@@ -30,6 +33,6 @@ app.get("/", (req, res) => {
 });
 app.use("/task", taskController);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server is running on port 3000.");
 });
