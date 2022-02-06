@@ -49,7 +49,6 @@ function addUser(req, res, hashedPassword) {
   User.email = req.body.email;
   User.username = req.body.username;
   User.password = hashedPassword;
-  console.log("before");
   User.save((err, docs) => {
     if (!err) {
       console.log("User added successfully.");

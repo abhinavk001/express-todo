@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const mongoose = require("mongoose");
 mongoose.connect(
-  `mongodb+srv://user1:${process.env.DB_PSSWD}@cluster0.g7tme.mongodb.net/TaskApp?retryWrites=true&w=majority`,
+  `mongodb+srv://user1:${process.env.DB_PSSWD}@taskapp.g7tme.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   { useNewUrlParser: true },
   (err) => {
     if (!err) console.log("MongoDB connection succeeded.");
